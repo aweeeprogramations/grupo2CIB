@@ -19,6 +19,10 @@ Dividimos o programa em várias classes para aplicar a matéria de herança e po
 2. Ir ao ficheiro `Main.java` e carregar em **Run**.
 
 ---
+## Repositório GitHub
+* [Repositório GitHub - HighLow Torneio](https://github.com/aweeeprogramations/grupo2CIB)
+
+---
 **Trabalho feito por (Grupo 2):**
 * Diogo Almeida - a22506107
 * Gabriel Marques - a22600719
