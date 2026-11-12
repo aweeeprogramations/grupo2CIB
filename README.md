@@ -1,26 +1,25 @@
-# Projeto HighLow - Programação Orientada a Objetos
+# Projeto HighLow - Parte 2: O Torneio
 
-## Sobre o Jogo
-Este projeto foi desenvolvido para a disciplina de POO. Trata-se de um jogo simples de cartas chamado **HighLow**, onde o objetivo do jogador é adivinhar se a próxima carta retirada do baralho tem um valor mais alto (A) ou mais baixo (B) do que a carta que está atualmente na mesa.
+## O que é este projeto?
+Este projeto é a segunda parte do trabalho de POO. Pegámos no jogo HighLow da Parte 1 e transformámo-lo num torneio onde vários jogadores podem jogar à vez. O objetivo continua a ser adivinhar se a próxima carta é mais alta (H) ou mais baixa (L).
 
-## Como o Código foi Implementado
-O projeto está dividido em classes com responsabilidades bem separadas:
+## Como organizámos o código
+Dividimos o programa em várias classes para aplicar a matéria de herança e polimorfismo:
 
-* **Card.java**: Representa uma carta individual. Guarda o valor numérico (de 2 a 14, onde o 14 é o Ás) e o naipe (Copas, Espadas, Ouros, Paus). O método `toString()` foi alterado para mostrar no ecrã os nomes das cartas especiais (Valete, Rainha, Rei e Ás).
-* **Deck.java**: Representa o baralho de 52 cartas. Trata de criar todas as cartas no início, baralhá-las aleatoriamente através do método `shuffle()` e retirar cartas uma a uma com o `dealCard()`.
-* **HighLow.java**: É a classe que controla o jogo. Tem métodos separados para mostrar o estado da mesa, ler os palpites do jogador, avaliar se acertou ou errou, e controlar as rondas. No final, calcula e apresenta o total de rondas jogadas e a pontuação média obtida.
-* **Main.java**: É apenas o ponto de entrada do programa, criando o objeto do jogo e chamando o método `startGame()`.
+* **Card.java**: Representa uma carta (com número e naipe). Transforma os números 11 a 14 em Valete, Rainha, Rei e Ás para ser mais fácil de ler no ecrã.
+* **Deck.java**: O baralho com as 52 cartas. Baralha o baralho no início de cada ronda e vai dando cartas com o método `dealCard()`.
+* **Player.java**: É a classe principal dos jogadores. Guarda o nome, os pontos acumulados, as rondas feitas e uma lista (`ArrayList`) com os pontos que o jogador fez em cada ronda.
+* **NormalPlayer.java**: Herda do `Player`. É o jogador normal: se errar a previsão ou calhar carta igual, a ronda dele acaba logo.
+* **SpecialPlayer.java**: Também herda do `Player`, mas tem a regra especial: se errar, tem direito a uma segunda tentativa para a mesma carta (pode usar esta ajuda uma vez por ronda).
+* **HighLow.java**: É onde o jogo acontece. Regista os jogadores no início, mete cada um a jogar à vez (em rotação), conta os pontos e no fim mostra a média, o histórico e quem ganhou (incluindo empates).
+* **Main.java**: Só serve para arrancar o programa.
 
-## Como Correr
-Basta abrir o projeto no VS Code e executar o ficheiro `Main.java` clicando em **Run**.
+## Como correr o jogo
+1. Abrir a pasta no VS Code.
+2. Ir ao ficheiro `Main.java` e carregar em **Run**.
 
 ---
-**Trabalho realizado por:**
+**Trabalho feito por (Grupo 2):**
 * Diogo Almeida - a22506107
 * Gabriel Marques - a22600719
 * Afonso Cabral - a22506076
-* Grupo: 2
-
-## Repositório GitHub
-O código e o histórico de commits deste projeto podem ser consultados em:
-https://github.com/aweeeprogramations/HighLow

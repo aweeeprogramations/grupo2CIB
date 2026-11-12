@@ -163,7 +163,7 @@ public class HighLow {
         System.out.println("Previsoes corretas: " + totalCorrectGuesses);
         System.out.println("Pontos atribuidos: " + totalPointsAwarded);
 
-        // Vencedor(es)
+        // Vencedor
         int maxScore = -1;
         for (Player p : players) {
             if (p.getTotalPoints() > maxScore) {
